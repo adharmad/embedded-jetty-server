@@ -26,7 +26,6 @@
 		<delete file="${JAR_DIR}" />
 
 		<mkdir dir="${JAR_DIR}" />
-		<mkdir dir="${WAR_DIR}" />
 	</target>
 
 	<target name="compile" depends="init">
