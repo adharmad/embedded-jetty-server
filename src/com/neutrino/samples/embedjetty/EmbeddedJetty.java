@@ -1,5 +1,8 @@
 package com.neutrino.samples.embedjetty;
 
+import javax.servlet.Servlet;
+import javax.servlet.http.HttpServlet;
+
 import org.eclipse.jetty.annotations.AnnotationConfiguration;
 import org.eclipse.jetty.plus.webapp.EnvConfiguration;
 import org.eclipse.jetty.plus.webapp.PlusConfiguration;
@@ -30,9 +33,14 @@ public class EmbeddedJetty {
                             new EnvConfiguration() });
 
         context.setContextPath("/");
-        
         context.setResourceBase("/");
-
+//        
+//        HttpServlet servlet = new HttpServlet() {
+//		};
+//        
+        
+        context.addServlet(HelloServlet.class, "/hello");
+        	
         // Tell the classloader to use the "server" classpath over the
         // webapp classpath. (this is so that jars and libs in your
         // server classpath are used, requiring no WEB-INF/lib 
